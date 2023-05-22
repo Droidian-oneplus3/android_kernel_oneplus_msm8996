@@ -30,7 +30,6 @@ static u64 init_refcnt; /* Protected by init_lock, hence not atomic. */
 static atomic_t total_entries = ATOMIC_INIT(0);
 static unsigned int max_entries, table_size;
 static void wg_ratelimiter_gc_entries(struct work_struct *);
-struct tvec_base { char herp_derp; } tvec_base_deferrable;
 static DECLARE_DEFERRABLE_WORK(gc_work, wg_ratelimiter_gc_entries);
 static struct hlist_head *table_v4;
 #if IS_ENABLED(CONFIG_IPV6)
